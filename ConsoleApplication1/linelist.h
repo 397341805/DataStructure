@@ -18,7 +18,7 @@ struct STUFF{
 
 };
 //初始化顺序表
-void  InitList(LINE &L);
+void  InitList(LINE &L,int length);
 //添加元素
 bool addElement(LINE &L, STUFF &S);
 //删除元素
