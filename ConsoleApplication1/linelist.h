@@ -5,18 +5,18 @@
 */
 //数据结构 线性表
 /*建立线性表 属性有姓名、工号、职务*/
-struct LINE
-{
+struct STUFF {
+	char name[10];
+	int Jobnum = 0;
+	char duty[10];
+
+};
+struct LINE{
 	STUFF *sp;
 	int Length;
 	int Size;
 };
-struct STUFF{
-	char name[10];
-	int Jobnum;
-	char duty[10];
 
-};
 //初始化顺序表
 void  InitList(LINE &L,int length);
 //添加元素

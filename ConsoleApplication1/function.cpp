@@ -22,20 +22,21 @@ bool delElement(LINE &L, int n)
 {
 	if (n >= L.Length)
 	{
-		return -1;
+		return false;
 	}
 	for (int i = n;i < L.Length-1;i++)
 	{
 		L.sp[i] = L.sp[i + 1];
 	}
 	L.Length--;
+	return true;
 }
 int findElement(LINE &L, int num)
 {
 	for (int i = 0;i < L.Length;i++)
 	{
 		if (L.sp[i].Jobnum == num)
-			return i;
+			return i; 
 	}
 	return -1;
 }
@@ -43,7 +44,7 @@ int findElement(LINE &L, char *name)
 {
 	for (int i = 0;i < L.Length;i++)
 	{
-		if (strcmp(L.sp[i].name, name) > 0)
+		if (strcmp(L.sp[i].name, name) ==0)
 			return i;
 		
 	}
@@ -54,6 +55,6 @@ void printLineList(LINE &L)
 	printf("打印线性表：\n");
 	for (int i = 0;i < L.Length;i++)
 	{
-		printf("%d 姓名: %s 工号： %d 职务: %s /n", i + 1,&L.sp[i].name, &L.sp[i].Jobnum, &L.sp[i].duty);
+		printf("%d 姓名: %s 工号： %d 职务: %s \n", i + 1,&L.sp[i].name, L.sp[i].Jobnum, &L.sp[i].duty);
 	}
 }
